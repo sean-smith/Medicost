@@ -1,20 +1,26 @@
 from flask import Flask
-app = Flask(__medicost__)
+app = Flask(__medicost__, static_url_path='')
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def home():
+    return app.send_static_file('index.html')
+
+@app.route('/search', methods=['GET', 'POST'])
+def search():
     error = None
     if request.method == 'POST':
-        if valid_request(request.form['procedure'], request.form['zip']):
-            return search(request.form['username'])
+        print request.form['procedure'], request.form['zip']
     else:
         error = 'Invalid username/password'
-    return render_template('index.html', error = error)
     
-
-def search(form_data):
+'''
+def search():
     print "send to providers page"
+    # assuming return values are in an array
+    for each prov in form_data:
+        print prov
     return redirect(url_for('search_results'))
+
 
 def valid_request():
     print "valid request"
@@ -22,7 +28,7 @@ def valid_request():
 @app.route('/providers/')
 def providers():
     print "search page"
-
+'''
 #search function by procedure returns the list of provides per procedure
 
 if __medicost__ == '__main__':
