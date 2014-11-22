@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__, static_url_path='')
 
 @app.route('/')
@@ -10,8 +10,10 @@ def search():
     error = None
     if request.method == 'POST':
         print request.form['procedure'], request.form['zip']
+        return '200'
     else:
         error = 'invalid request'
+        return '500'
 
 
 def search(form_data):
