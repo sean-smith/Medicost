@@ -2,9 +2,11 @@ $(function(){
     //Need to make a server call to load procedures
     var availableTags=["ActionScript","AppleScript","Asp","BASIC","C","C++","Clojure","COBOL","ColdFusion","Erlang","Fortran","Groovy","Haskell","Java","JavaScript","Lisp","Perl","PHP","Python","Ruby","Scala","Scheme"];
 
+    /*
     $("#procedure").autocomplete({
         source: availableTags
     });
+    */
 
     var error = function(data){
         var error_bar = "<div class='alert alert-danger' role='alert'><button type='button' class='close' data-dismiss='alert'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button>"+data+"</div>";
