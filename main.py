@@ -4,7 +4,7 @@ app = Flask(__name__, static_url_path='')
 
 procedures = []
 def make_list():
-    f = open('uniques', 'r')
+    f = open('uniques.txt', 'r')
     global procedures 
     procedures = f.read().split("\n")
     f.close()
