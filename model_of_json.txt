@@ -13,14 +13,3 @@ procedure = {
 },
 
 ]
-
-
-
-$.ajax({
-    type: "GET",
-    url: "/search?procedure="+procedure
-    success: function(data){
-
-    }
-
-});

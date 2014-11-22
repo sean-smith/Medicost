@@ -1,9 +1,10 @@
 $(function(){
     //Need to make a server call to load procedures
-    var availableTags=["ActionScript","AppleScript","Asp","BASIC","C","C++","Clojure","COBOL","ColdFusion","Erlang","Fortran","Groovy","Haskell","Java","JavaScript","Lisp","Perl","PHP","Python","Ruby","Scala","Scheme"];
+    var procedures=["ActionScript","AppleScript","Asp","BASIC","C","C++","Clojure","COBOL","ColdFusion","Erlang","Fortran","Groovy","Haskell","Java","JavaScript","Lisp","Perl","PHP","Python","Ruby","Scala","Scheme"];
 
-    $("#procedure").autocomplete({
-        source: availableTags
+    var $procedure = $('#procedure');
+    $procedure.autocomplete({
+        source: procedures
     });
 
     var error = function(data){
