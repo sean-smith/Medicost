@@ -1,14 +1,6 @@
 from flask import Flask, request, render_template
 app = Flask(__name__, static_url_path='')
 
-
-procedures = []
-def make_list():
-    f = open('uniques.txt', 'r')
-    global procedures 
-    procedures = f.read().split("\n")
-    f.close()
-
 @app.route('/')
 def home():
     return app.send_static_file('index.html')
@@ -19,8 +11,6 @@ def search():
     if request.method == 'POST':
         procedure =  request.form['procedure']
         zip_code = request.form['zip']
-        make_list()
-        print procedures
         return render_template('results.html', data={"provider": message})
         return '200'
     else:
