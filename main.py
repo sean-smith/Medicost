@@ -1,5 +1,5 @@
 from flask import Flask
-app = Flask(__medicost__, static_url_path='')
+app = Flask(__name__, static_url_path='')
 
 @app.route('/')
 def home():
@@ -11,17 +11,17 @@ def search():
     if request.method == 'POST':
         print request.form['procedure'], request.form['zip']
     else:
-        error = 'Invalid username/password'
+        error = 'invalid request'
     
-'''
-def search():
+
+def search(form_data):
     print "send to providers page"
     # assuming return values are in an array
     for each prov in form_data:
         print prov
     return redirect(url_for('search_results'))
 
-
+'''
 def valid_request():
     print "valid request"
 
@@ -31,6 +31,6 @@ def providers():
 '''
 #search function by procedure returns the list of provides per procedure
 
-if __medicost__ == '__main__':
+if __name__ == '__main__':
     app.run(debug = True)
 #    app.run(host='0.0.0.0')
