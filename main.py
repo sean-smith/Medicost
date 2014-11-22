@@ -1,5 +1,13 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 app = Flask(__name__, static_url_path='')
+
+
+procedures = []
+def make_list():
+    f = open('uniques', 'r')
+    global procedures 
+    procedures = f.read().split("\n")
+    f.close()
 
 @app.route('/')
 def home():
@@ -9,18 +17,16 @@ def home():
 def search():
     error = None
     if request.method == 'POST':
-        print request.form['procedure'], request.form['zip']
+        procedure =  request.form['procedure']
+        zip_code = request.form['zip']
+        make_list()
+        print procedures
+        return render_template('results.html', data={"provider": message})
         return '200'
     else:
         error = 'invalid request'
         return '500'
 
-
-def search(form_data):
-    print "send to providers page"
-    # assuming return values are in an array
-    for each_prov in form_data:
-        print prov
     return redirect(url_for('search_results'))
 
 '''
