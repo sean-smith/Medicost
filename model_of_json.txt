@@ -1,0 +1,26 @@
+[
+procedure = {
+    provider: {
+
+    name:
+    credentials:
+    location:
+    gender:
+    cost-billed:
+    zip-code:
+    city:
+    }
+},
+
+]
+
+
+
+$.ajax({
+    type: "GET",
+    url: "/search?procedure="+procedure
+    success: function(data){
+
+    }
+
+});
