@@ -1,6 +1,14 @@
 import json
 
+
 def make_list():
+	f = open('uniques.txt', 'r')
+	procedures = f.read().split("\n")
+	f.close()
+	print(procedures)
+
+
+def make_json():
     f = open('uniques.txt', 'r')
     procedures = []
     dct = {}

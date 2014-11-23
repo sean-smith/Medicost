@@ -19,14 +19,6 @@ def search():
 
     return redirect(url_for('search_results'))
 
-@app.route("/get_list")
-def get_list():
-    procedures = []
-    uniques = {}
-    f = open('uniques.json')
-    list = f.split("\n")
-    for each in list:
-        uniques["line"] = each
 
 
 
