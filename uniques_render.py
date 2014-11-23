@@ -5,10 +5,10 @@ def make_list():
     procedures = []
     dct = {}
     procedures = f.read().split("\n")
-    for each in procedures:
-        dct.append({"line": each})
-    print( dct)
-
+    f.close()
+    thing = json.dumps([dict(line=pn) for pn in procedures])
+    json_file = open('uniques.json', 'w')
+    json_file.write(thing)
 
 
 make_list()
