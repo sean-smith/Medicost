@@ -28,15 +28,15 @@ $(function(){
             error("Please Enter a zip code");
             return false
         }
+
+
+
         $.ajax({
-            type: "POST",
-            data: {
-                "procedure": procedure,
-                "zip": zip
-            },
+            type: "GET",
             url: "/search?procedure="+procedure+"&zip="+zip,
             success: function(data){
-                console.log("success");
+            	$("#results").hide();
+            	$("#results").html(data);
             }
         });
         return false;

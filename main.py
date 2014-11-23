@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from firebase import firebase
 app = Flask(__name__, static_url_path='')
 
 @app.route('/')
@@ -8,31 +9,18 @@ def home():
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     error = None
-    if request.method == 'POST':
-        procedure =  request.form['procedure']
-        zip_code = request.form['zip']
-        return render_template('results.html', data={"provider": message})
-        return '200'
+    if request.method == 'GET':
+        procedure =  request.args.get('procedure')
+        zip_code = request.args.get('zip')
+        results = server_call(procedure, zip_code)
+        return render_template('results.html', data={"results": results})
     else:
         error = 'invalid request'
         return '500'
 
-    return redirect(url_for('search_results'))
 
-
-
-
-
-
-'''
-def valid_request():
-    print "valid request"
-
-@app.route('/providers/')
-def providers():
-    print "search page"
-'''
-#search function by procedure returns the list of provides per procedure
+def server_call(procedures, zip_code):
+    return 2
 
 if __name__ == '__main__':
     app.run(debug = True, port=80)

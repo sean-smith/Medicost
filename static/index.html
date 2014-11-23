@@ -15,10 +15,22 @@
     <link rel="stylesheet" href="js/jquery-ui.theme.css">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .vertical-center {
+        min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+        min-height: 100vh; /* These two lines are counted as one :-)       */
+
+        display: flex;
+        align-items: center;
+    }
+    </style>
 
 </head>
 <body>
 
+
+<div id="results">
+    <div class="vertical-center">
     <div class="col-md-4 col-md-offset-4 well">
     <div id="error"></div>
     <div id="form-data vcenter">
@@ -35,6 +47,8 @@
         </form>
     </div>
     </div>
+</div>
+</div>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/search.js"></script>
 
