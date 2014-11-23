@@ -908,10 +908,12 @@ Liver imaging (3D)
 Nuclear rx intra-arterial
 Needle biopsy pancreas
 Spinal disk surgery add-on
->>> runfile('/home/david/Downloads/shit.py', wdir=r'/home/david/Downloads')
-['Shoulder arthroscopy/surgery' 'Arthroscop rotator cuff repr'
- 'Pt evaluation' ..., 'Nuclear rx intra-arterial' 'Needle biopsy pancreas'
- 'Spinal disk surgery add-on']
+Shoulder arthroscopy/surgery
+Arthroscop rotator cuff repr
+Pt evaluation
+Nuclear rx intra-arterial
+Needle biopsy pancreas
+Spinal disk surgery add-on
 Physician Assistant
 Physical Therapist
 Allergy/Immunology

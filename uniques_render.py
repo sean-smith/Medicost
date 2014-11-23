@@ -1,12 +1,14 @@
+import json
 
-procedures = []
 def make_list():
-    f = open('uniques.txt', 'r+')
-    global procedures
+    f = open('uniques.txt', 'r')
+    procedures = []
+    dct = {}
     procedures = f.read().split("\n")
-    for x 
-    #f.write(procedures)
-    print(procedures)
-    f.close()
+    for each in procedures:
+        dct.append({"line": each})
+    print( dct)
+
+
 
 make_list()

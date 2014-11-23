@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medicost</title>
+
+    <!-- All imports -->
+    <!--<script src="js/jquery.js"></script> -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="{{ url_for('static', 'js/jquery-ui.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', 'js/jquery-ui.css' }}">
+    <link rel="stylesheet" href="{{ url_for('static', 'js/jquery-ui.structure.css' }}">
+    <link rel="stylesheet" href="{{ url_for('static', 'js/jquery-ui.theme.css' }}">
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static', 'css/bootstrap.min.css') }}" rel="stylesheet">
+
+</head>
+<body>
+
+
+        <div id="error"></div>
+            <form role="form" id="search" class="form-inline">
+                <div class="form-group">
+                    <label for="procedure">Procedure</label>
+                    <input contenteditable="true" type="text" class="form-control" id="procedure" placeholder="Enter Procedure Name:">
+                </div>
+                <div class="form-group">
+                    <label for="zip">Zip Code</label>
+                    <input type="text" class="form-control" id="zip" placeholder="Enter Zip Code">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2" id="results">
+
+
+                        
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+    <script src="{{ url_for('static', 'js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', 'js/search.js') }}"></script>
+
+</body>
+</html>

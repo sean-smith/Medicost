@@ -2,6 +2,12 @@ $(function(){
     //Need to make a server call to load procedures
     var procedures=["ActionScript","AppleScript","Asp","BASIC","C","C++","Clojure","COBOL","ColdFusion","Erlang","Fortran","Groovy","Haskell","Java","JavaScript","Lisp","Perl","PHP","Python","Ruby","Scala","Scheme"];
 
+    $.ajax({
+        url: 
+
+    })
+
+
     var $procedure = $('#procedure');
     $procedure.autocomplete({
         source: procedures
